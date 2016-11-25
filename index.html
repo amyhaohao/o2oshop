@@ -4,9 +4,8 @@
         <title></title>             
         <meta content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" name="viewport" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="lib-css/bootstrap.min.css"  media="screen"/> 
-        <link rel="stylesheet" href="lib-css/bootstrap-datepicker3.min.css"  media="screen"/> 
-        <link rel="stylesheet" href="css/style.css?20150609"  media="screen"/> 
+        <link rel="stylesheet" href="css/bootstrap.min.css"/> 
+        <link rel="stylesheet" href="css/style.css?20150609"/> 
         <script>
             (function(){var l = window.location + "";if(l.indexOf("?rm")!=-1) return;var s = l.split("#");if(s[0].indexOf(".html")==-1 && s[0].charAt(s[0].length-1) != "/") s[0] += "/";s[0] += "?rm="+Math.random();window.location=s.join("#");})();
         </script>
@@ -27,7 +26,7 @@
             <a class="a a2" href="#/orders/statistic1" ng-class="{active:location.path().indexOf('/orders/statistic1')==0}">订单统计</a> 
             <a class="a a2" href="#/orders/statistic2" style="border-bottom:#579610 1px solid;" ng-class="{active:location.path().indexOf('/orders/statistic2')==0}">我的收益</a> 
         </div>
-        <div class="loginForm fade" ng-controller="LoginFormCtrl" ng-class="{fadeIn:!userType}">   
+        <div class="loginForm fade" ng-controller="LoginFormCtrl" ng-class="{fadeIn:!userName}">
             <div>
                 <div class="font-green">用户登录</div>
                 <form ng-submit="submit()">
@@ -53,15 +52,19 @@
                  </form>
             </div>
         </div>
+        <div id="loading">
+            <div><span class="i1"></span>
+            <span class="i2"></span>
+            <span class="i3"></span>
+            <span class="i4"></span>
+            <span class="i5"></span>
+            <span></span></div>
+        </div> 
         <script src="js/libs/jquery-1.10.2.min.js"></script>   
-        <script src="js/libs/bootstrap.min.js"></script>
-        <script src="js/libs/bootstrap-datepicker.min.js"></script>        
-        <script src="js/libs/angular.min.js"></script>
-        <script src="js/libs/angular-route.min.js"></script>
-        <script src="js/libs/angular-resource.min.js"></script>
-        <script src="js/libs/angular-cookies.min.js"></script>
+        <script src="build/bootstrap.min.js"></script>      
+        <script src="build/angular.min.js"></script>
         <script src="js/libs/highcharts.js"></script>
-        <script src="js/all.js"></script>
+        <script src="build/all.js"></script>
 <!--
         <script src="js/app.js?20150609"></script>
         <script src="js/services.js?20150609"></script>
