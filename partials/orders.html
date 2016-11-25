@@ -1,6 +1,6 @@
 <div class="ordersView font-dark">
     <div class="con2">
-     <form action="json/test.xlsx" target="_blank" method="post">
+     <form action="" target="_blank" method="post">
         <div class="search clearfix">
             <div class="left"><span>订单编号</span><input type="text" class="form-control" ng-model="search.orderNo" name="orderNo"/></div>
             <div class="left"><span style="letter-spacing:7px;">用户名</span><input type="text" class="form-control" ng-model="search.customerName" name="customerName"/></div>
@@ -23,7 +23,8 @@
         </div>
         <div class="searchBtn center" style="padding:10px 0 30px">
             <input type="button" class="button2 bg-green" value="查 询" ng-click="doSearch()"/>
-            <input type="submit" class="button2 bg-red2" value="导 出" style="margin-right:0;"/>
+            <input type="button" class="button2 bg-red2" value="导 出" style="margin-right:0;" onclick="$(this).next()[0].click()"/>
+            <a href="json/test.xlsx" target="_blank" style="display:none"></a>
         </div>
         </form>
         <iframe name="exportFrame" style="display:none;"></iframe>
