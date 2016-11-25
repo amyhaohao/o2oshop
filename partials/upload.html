@@ -1,0 +1,7 @@
+<div class="myUpload">
+<form id="uploadForm{{$id}}" method="post" action="{{uploadURL}}" target="uploadFrame" enctype="multipart/form-data">
+      <input class="form-control" type="file" name="file" autocomplete="off"/>
+      <input id="uploadBtn" class="button bg-green" type="button" value="{{uploading?'上传中':'上传'}}" ng-click="uploadFile()" ng-class="{disabled:$root.uploading}">
+</form>
+    <div ng-click="selectFile()" class="drag"><img my-src="uploadImg" /><a>点击<br>或<br>拖放</a></div>
+</div>

@@ -1,0 +1,89 @@
+<div class="orderView">
+    <div class="con2">
+        <div class="tit2 font-green">订单详情</div>
+        <div class="c1">
+            <div class="clearfix">
+                <div class="left">
+                    <span class="l font-dark">用户名称</span>{{data.nickName}}
+                </div>
+                <div class="left">
+                    <span class="l font-dark">订单编号</span>{{data.orderNo}}
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="left">
+                    <span class="l font-dark">下单时间</span>{{data.orderDate|date:"yyyy-MM-dd HH:mm:ss"}}
+                </div>
+                <div class="left">
+                    <span class="l font-dark">支付方式</span>{{data.paymentType.getOtherStatus()}}
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="left">
+                    <span class="l font-dark">商品金额</span>&yen;{{data.subTotal.toFixed(2)}}
+                </div>
+                <div class="left">
+                    <span class="l font-dark">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费</span>&yen;{{data.shipFee.toFixed(2)}}
+                </div>
+            </div>
+            <div class="clearfix font-red">
+                <div class="left">
+                    <span class="l">订单优惠</span>-&yen;{{(data.orderDiscount||0).toFixed(2)}}
+                </div>
+                <div class="left">
+                    <span class="l" style="font-size:18px;">总金额</span>&yen;{{(data.subTotal+data.shipFee-data.orderDiscount).toFixed(2)}}
+                </div>
+            </div>
+        </div>
+        <div class="tit2 font-green" style="margin-top:15px;">收货信息</div>
+        <div class="c1">
+            <div class="clearfix">
+                <div class="left">
+                    <span class="l font-dark">收货人</span>收货人姓名
+                </div>
+                <div class="left">
+                    <span class="l font-dark">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话</span>138123456789
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="left">
+                    <span class="l font-dark">地&nbsp;&nbsp;&nbsp;址</span>上海浦建路145号
+                </div>
+                <div class="left">
+                    <span class="l font-dark">送货时间</span>09:00 - 17:00
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="left">
+                    <span class="l font-dark">备&nbsp;&nbsp;&nbsp;注</span>备注信息备注信息
+                </div>
+            </div>
+        </div>
+        <div class="tit2 font-green" style="margin-top:20px;border-bottom:none;">商品详情</div>
+        <div class="tableCon" style="margin-top:6px;">
+            <table class="table" style="min-width:360px;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="d in data.items">
+                    <td>{{d.id}}</td>
+                    <td>{{d.name}}</td>
+                    <td>&yen; {{d.price.toFixed(1)}}/{{d.unit}} </td>
+                    <td>{{$index+1}}</td>
+                    <td>&yen; {{(d.price*($index+1)).toFixed(2)}}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class="center">
+            <input type="button" class="button2 bg-green" value="返回订单列表" onclick="window.history.go(-1)" style="width:140px;margin-top:20px;">
+        </div>
+    </div>
+</div>

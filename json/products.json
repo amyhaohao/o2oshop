@@ -1,0 +1,11 @@
+[{"id":1, "name":"商品名称1", "imgUrl":"images/44.png", "categoryId":1, "shopCategoryId":1, "price":3.4, "unit":"克", "desc":"商品描述1商品描述1", "onSale":"true"},
+ {"id":2, "name":"商品名称2", "imgUrl":"images/44.png", "categoryId":2, "shopCategoryId":2, "price":34.3, "unit":"千克", "desc":"商品描述2商品描述2", "onSale":"true"},
+ {"id":3, "name":"商品名称3", "imgUrl":"images/44.png", "categoryId":3, "shopCategoryId":3, "price":5.9, "unit":"克", "desc":"商品描述3商品描述3", "onSale":"true"},
+ {"id":4, "name":"商品名称4", "imgUrl":"images/44.png", "categoryId":4, "shopCategoryId":4, "price":9.9, "unit":"千克", "desc":"商品描述4商品描述4", "onSale":"true"},
+ {"id":5, "name":"商品名称5", "imgUrl":"images/44.png", "categoryId":1, "shopCategoryId":5, "price":2, "unit":"克", "desc":"商品描述5商品描述5", "onSale":"true"},
+ {"id":6, "name":"商品名称6", "imgUrl":"images/44.png", "categoryId":2, "shopCategoryId":1, "price":4.5, "unit":"克", "desc":"商品描述6商品描述6", "onSale":"true"},
+ {"id":7, "name":"商品名称7", "imgUrl":"images/44.png", "categoryId":3, "shopCategoryId":3, "price":6, "unit":"克", "desc":"商品描述7商品描述7", "onSale":"true"},
+ {"id":8, "name":"商品名称8", "imgUrl":"images/44.png", "categoryId":4, "shopCategoryId":4, "price":9, "unit":"千克", "desc":"商品描述8商品描述8", "onSale":"true"},
+ {"id":9, "name":"商品名称9", "imgUrl":"images/44.png", "categoryId":1, "shopCategoryId":2, "price":20, "unit":"克", "desc":"商品描述9商品描述9", "onSale":"true"},
+ {"id":10, "name":"商品名称10", "imgUrl":"images/44.png", "categoryId":2, "shopCategoryId":5, "price":16.9, "unit":"克", "desc":"商品描述10商品描述10", "onSale":"true"}
+]

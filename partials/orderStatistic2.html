@@ -1,0 +1,23 @@
+<div class="orderStatisticView font-dark">
+    <div class="con2">
+        <div class="tit2"><span class="font-green">我的收益</span>
+            <div class="tab"><span ng-class="{active:mode=='line'}" ng-click="changeMode('line')">折线图</span><span ng-class="{active:mode=='column'}" ng-click="changeMode('column')">柱状图</span></div>
+        </div>
+        <div class="search clearfix">
+            <div class="left"><span>时间段</span><select class="form-control" ng-model="period" name="deliverType">
+                  <option value="0">一个月</option>
+                  <option value="1">三个月</option>
+                  <option value="2">半年</option>
+                  <option value="3">一年</option>
+              </select></div>
+            <div class="left"><span>支付方式</span><select class="form-control" ng-model="search.payment">
+                  <option value="">全部</option>
+                  <option value="1">在线支付</option>
+                  <option value="2">货到付款</option>
+            </select></div>
+            <div class="left last"><input type="button" class="button2 bg-green" value="查   询" ng-click="confirm()"/></div>
+        </div>
+        
+        <div id="chartContainer" style="margin-top:50px;height:400px;"></div>
+    </div>
+</div>

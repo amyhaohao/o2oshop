@@ -1,0 +1,78 @@
+<div class="shopView con2 font-dark">
+    <div class="tit2 font-green2">店铺信息</div>
+    <div class="clearfix infos">
+        <div class="left">
+            <div class="line"><span class="l">店铺名称</span><span class="font-gray2">{{shop.name}}</span></div>
+            <div class="line"><span class="l">店铺电话</span><span class="font-gray2">{{shop.phone}}</span></div>
+            <div class="line"><span class="l">起送金额</span><span class="font-gray2">&yen; {{shop.deliveryLimitAmount}}</span></div>
+            <div class="line"><span class="l">银行卡持卡人</span><span class="font-gray2">{{shop.payeeName}}</span></div>
+            <div class="line"><span class="l">银行卡开户行</span><span class="font-gray2">{{shop.payeeBank}}</span></div>
+            <div class="line"><span class="l">店铺状态</span><span class="font-gray2">{{shop.status.getOtherStatus()}}</span></div>
+        </div>
+        <div class="left">
+            <div class="line"><span class="l">店铺地址</span><span class="font-gray2">{{shop.address}}</span></div>
+            <div class="line"><span class="l">配送金额</span><span class="font-gray2">&yen; {{shop.deliveryFee}}</span></div>
+            <div class="line"><span class="l">营业时间</span><span class="font-gray2">{{shop.openingStart.substr(0,5)}} - {{shop.openingEnd.substr(0,5)}}</span></div>
+            <div class="line"><span class="l">银行卡账号</span><span class="font-gray2">{{shop.payeeNo}}</span></div>
+            <div class="line clearfix"><span class="l">店铺公告</span><span class="font-gray2">{{shop.notice}}</span></div>
+        </div>
+        <div class="right center">
+            <img my-src="shop.imgUrl" style="margin-top:5px;" />
+            <div style="margin-top:5px;">店铺图标</div>
+        </div>
+    </div>
+    <div class="center" style="margin-top:20px;">
+        <input type="button" class="button2 bg-green btn1" value="修 改" ng-click="editShop()" style="margin-right:25px;"/>
+        <a class="button2 bg-red" href="#/products/list/0/1" style="margin-right:25px;">商品管理</a>
+        <a class="button2 bg-red" href="#/orders/list/1">订单管理</a>
+    </div>            
+            
+<div class="mask" ng-class="{maskShow:showShop}">
+    <div class="popup shopPop font-dark">
+        <div class="font-green2" style="font-size:18px;margin-bottom:10px;">修改店铺</div>
+        <div class="cons">
+            <div class="line" style="margin:0;"><span class="left">店铺图标</span><div my-upload="editData.imgUrl"></div></div>
+            <form ng-submit="saveShop()">
+                <div class="clearfix">
+                <div class="left l">
+                    <div class="line"><span>店铺名称</span><input type="text" class="form-control last" ng-model="editData.name" nmaxlength="30" required /></div>
+                    <div class="line"><span>店铺电话</span><input type="text" class="form-control last" maxlength="20" required ng-model="editData.phone"/>
+                    </div>
+                    <div class="line"><span>配送金额</span><input type="text" class="form-control last" maxlength="5" required ng-model="editData.deliveryFee"/>
+                    </div>
+                    <div class="line" style="padding-left:97px;"><span>银行卡持卡人</span><input type="text" class="form-control" maxlength="10" require ng-model="editData.payeeName"/></div>
+                    <div class="line" style="padding-left:97px;"><span>银行卡开户行</span><input type="text" class="form-control" maxlength="20" required ng-model="editData.payeeBank" placeholder="开户银行及开户银行支行"/></div>
+                </div>
+                <div class="right">
+                    <div class="line"><span>店铺地址</span><input type="text" class="form-control" maxlength="50" required ng-model="editData.address"/></div>
+                    <div class="line"><span>起送金额</span><input type="text" class="form-control" maxlength="5" required ng-model="editData.deliveryLimitAmount"/></div>
+                    <div class="line time"><span>营业时间</span>
+                        <div class="clearfix">
+                            <div class="left"><input type="text" class="form-control" maxlength="5" required ng-model="editData.openingStart" placeholder="08:00"/></div>
+                            <div class="right"><input type="text" class="form-control" maxlength="5" required ng-model="editData.openingEnd" placeholder="23:00"/></div>
+                            <div class="m">-</div>
+                        </div>
+                    </div>
+                    <div class="line time" style="padding-left:85px;"><span>银行卡账号</span><input type="text" class="form-control" maxlength="30" required ng-model="editData.payeeNo"/></div>
+                    <div class="line"><span>店铺状态</span><select class="form-control" ng-model="editData.status">
+                        <option value="OPENING">营业中</option>  
+                        <option value="HALFTIME">休息中</option>
+                        <option value="CLOSED">关闭</option>
+                         </select>
+                    </div>
+                </div>    
+                </div>
+                <div class="line" style="margin-top:0;"><span>店铺公告</span><input type="text" class="form-control" maxlength="100" ng-model="editData.notice"/></div>
+                <div style="margin:20px -180px 0 0;" class="center">
+                    <input type="button" class="button2 bg-green" value="取 消" style="margin-right:15px;" ng-click="showShop=false"/>
+                    <input type="submit" class="button2 bg-red" value="保 存"/>
+                </div>
+            </form>
+        </div>
+        <div class="c">店铺图标</div>
+        <span class="x" ng-click="showShop=false"></span>
+    </div>
+</div>
+
+
+</div>

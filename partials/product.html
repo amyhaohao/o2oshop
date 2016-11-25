@@ -1,0 +1,83 @@
+<div class="productView con2 font-dark">
+    <div class="tit2" style="margin-bottom:10px;">
+        <span ng-class="{active:tab==1}" ng-click="tab=1" style="margin:0 40px 0 5px;">{{product.id==0?"新增":"编辑"}}商品</span>
+        <span ng-class="{active:tab==2}" ng-click="tab=2">商品详情</span>
+        <div class="bg-green" style="left:{{tab==1?0:118}}px"></div>
+    </div>
+        <div class="tab1" ng-show="tab==1">
+            <div class="l">
+                <span>商品封面</span>
+                <div my-upload="product.imgUrl" class="upload1"></div>
+            </div>
+            <form ng-submit="saveProduct()">
+            <div class="l"><span>商品名称</span><input type="text" class="form-control" maxlength="20" ng-model="product.name" required /></div>
+            <div class="clearfix">
+                <div class="left" style="width:48%">
+                    <div class="l"><span>商品单价</span><input type="text" class="form-control" ng-model="product.price" required maxlength="8"/>
+                    </div>
+                    <div class="l"><span>商品状态</span><select class="form-control" ng-model="product.onSale">
+                        <option value="true">上架</option>
+                        <option value="false">下架</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="right" style="width:48%">
+                    <div class="l"><span>计价单位</span><select class="form-control" ng-model="product.unit">
+                    <option value="克">克</option>
+                    <option value="千克">千克</option>
+                    <option value="斤">斤</option>
+                </select>
+                    </div>
+                    <div class="l"><span>商品类别</span><select class="form-control" ng-model="product.categoryId">
+                       <option ng-repeat="c in selectCats" value="{{c.id}}" ng-selected="c.id==product.categoryId">{{c.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="l"><span>店铺标签</span><select class="form-control" ng-model="product.shopCategoryId">
+                <option value="0">-请选择店铺标签-</option>
+                <option ng-repeat="c in selectShopCats" value="{{c.id}}" ng-selected="c.id==product.shopCategoryId">{{c.name}}</option>
+                </select>
+            </div>
+            <div class="l"><span>商品描述</span><textarea class="form-control" style="height:90px;line-height:20px;" ng-model="product.desc" maxlength="30"></textarea></div>
+            <div class="center" style="position:absolute;left:0;bottom:0;width:100%">
+                  <input type="button" class="button2 cancel bg-green" onclick="history.go(-1)" value="返回商品列表"/>
+                  <input type="submit" class="button2 bg-red2" value="保  存" style="margin:0 15px;"/>
+                  <input type="button" class="button2 bg-red2" value="增加下一个商品" ng-if="!product.id" ng-click="reload()"/>
+            </div>
+            </form>
+            <div class="logo">商品封面</div>
+        </div>
+        <div class="tab2" ng-show="tab==2">
+            <div class="font-gray2" style="margin-bottom:8px;">商品参数</div>
+            <div ng-repeat="i in params" class="params">
+                <input type="text" class="form-control f1" ng-model="i.productKey" placeholder="参数名称"/><input type="text" class="form-control f2" ng-model="i.productValue" placeholder="参数值"/><span class="trash" ng-click="del(params, $index)"></span>
+            </div>
+            <div style="padding:10px 0 15px;" class="center"><input type="button" class="button2 bg-green" ng-click="params.push({})" value="添加商品属性" style="margin-right:15px;"/><input type="button" class="button2 bg-red2" ng-click="saveParams()" value="保存属性" /></div>
+            <div class="font-gray2" style="margin-bottom:10px;">图片详情</div>
+            <div class="detail">
+                <div>
+                    <div ng-repeat="img in images" class="uploads">
+                        <div class="font-gray2">图片{{$index+1}}</div>
+                        <div my-upload="img.imagePath"></div>
+                        <div><textarea class="form-control" ng-model="img.description" placeholder="图片描述"></textarea></div>
+                    </div>
+                    <div class="center">
+                         <input type="button" class="button2 bg-green" ng-click="images.push({})" value="增加图片" style="margin-right:10px;"/>
+                         <input type="button" class="button2 bg-red2" ng-click="saveImages()" value="保  存" />
+                    </div>
+                </div>
+                <div class="r">
+                    <div class="preview" ng-if="isImgEmpty()"><img src="images/6.png" /></div>
+                    <div ng-repeat="img in images">
+                        <div class="preview" ng-show="img.imagePath || img.description">
+                            <img ng-if="img.imagePath" my-src="img.imagePath"/>
+                            <div style="font-size:12px;">{{img.description}}</div>
+                            <span class="x" ng-click="del(images, $index)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+              <iframe name="uploadFrame" id="uploadFrame" style="display:none;"></iframe>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="o2oApp">
+    <head>
+        <title></title>             
+        <meta content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" name="viewport" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="lib-css/bootstrap.min.css"  media="screen"/> 
+        <link rel="stylesheet" href="lib-css/bootstrap-datepicker3.min.css"  media="screen"/> 
+        <link rel="stylesheet" href="css/style.css?20150609"  media="screen"/> 
+        <script>
+            (function(){var l = window.location + "";if(l.indexOf("?rm")!=-1) return;var s = l.split("#");if(s[0].indexOf(".html")==-1 && s[0].charAt(s[0].length-1) != "/") s[0] += "/";s[0] += "?rm="+Math.random();window.location=s.join("#");})();
+        </script>
+    </head>
+    <body>
+        <div class="bodyContainer">
+            <div ng-view class="viewContainer" autoscroll="true"></div>
+        </div>
+        <div class="top-menu" ng-controller="TopMenuCtrl">
+            <a class="glyphicon glyphicon-list" id="leftMenuIcon"></a>
+            <span>{{userName}}</span>
+            <a class="logout font-green" ng-click="logout()">退出登录</a>
+        </div>
+        <div id="left-menu" ng-controller="SideMenuCtrl">
+            <a class="a" href="#/shop" ng-class="{active:location.path().indexOf('/shop')==0}">店铺管理</a>
+            <a class="a" href="#/products/list/0/1" ng-class="{active:location.path().indexOf('/products')==0}">商品管理</a>
+            <a class="a" href="#/orders/list/1" ng-class="{active:location.path().indexOf('/orders/list')==0||location.path().indexOf('/orders/detail')==0}">订单管理</a>
+            <a class="a a2" href="#/orders/statistic1" ng-class="{active:location.path().indexOf('/orders/statistic1')==0}">订单统计</a> 
+            <a class="a a2" href="#/orders/statistic2" style="border-bottom:#579610 1px solid;" ng-class="{active:location.path().indexOf('/orders/statistic2')==0}">我的收益</a> 
+        </div>
+        <div class="loginForm fade" ng-controller="LoginFormCtrl" ng-class="{fadeIn:!userType}">   
+            <div>
+                <div class="font-green">用户登录</div>
+                <form ng-submit="submit()">
+                    <div class="line clearfix">
+                        <div class="l left">
+                            <label class="support-form-label">用户名：</label>  
+                        </div>
+                        <div class="left" style="">
+                            <input class="form-control" type="text" ng-model="data.userName" required autocomplete="off"/>
+                        </div>             
+                    </div>
+                    <div class="line clearfix">
+                        <div class="l left">
+                            <label class="support-form-label">密&nbsp;&nbsp;&nbsp;码：</label>  
+                        </div>
+                        <div class="left">
+                            <input class="form-control" type="password" ng-model="data.password" required autocomplete="off"/>
+                        </div>             
+                    </div>
+                    <div style="padding-top:10px;">
+                        <button class="button bg-red" type="submit">登录</button> 
+                    </div>
+                 </form>
+            </div>
+        </div>
+        <script src="js/libs/jquery-1.10.2.min.js"></script>   
+        <script src="js/libs/bootstrap.min.js"></script>
+        <script src="js/libs/bootstrap-datepicker.min.js"></script>        
+        <script src="js/libs/angular.min.js"></script>
+        <script src="js/libs/angular-route.min.js"></script>
+        <script src="js/libs/angular-resource.min.js"></script>
+        <script src="js/libs/angular-cookies.min.js"></script>
+        <script src="js/libs/highcharts.js"></script>
+        <script src="js/all.js"></script>
+<!--
+        <script src="js/app.js?20150609"></script>
+        <script src="js/services.js?20150609"></script>
+        <script src="js/controllers.js?20150609"></script>
+        <script src="js/directives.js?20150609"></script>
+        <script src="js/util.js?20150609"></script>
+-->
+    </body>
+</html>

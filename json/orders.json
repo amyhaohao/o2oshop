@@ -1,0 +1,10 @@
+[{"orderNo":547567601, "nickName":"用户1", "deliveryType":"HOME_DELIVERY", "paymentType":"ONLINE", "subTotal":23, "shipFee":5, "orderDiscount":5, "status":"AWAIT_REFUND"},
+{"orderNo":547567601, "nickName":"用户2", "deliveryType":"HOME_DELIVERY", "paymentType":"ONLINE", "subTotal":54, "shipFee":10, "orderDiscount":0, "status":"AWAIT_PAY"},
+{"orderNo":547567601, "nickName":"用户3", "deliveryType":"ONESELF", "paymentType":"ONLINE", "subTotal":67, "shipFee":5, "orderDiscount":0, "status":"SHIPPED"},
+{"orderNo":547567601, "nickName":"用户4", "deliveryType":"HOME_DELIVERY", "paymentType":"COD", "subTotal":36, "shipFee":5, "orderDiscount":0, "status":"done"},
+{"orderNo":547567601, "nickName":"用户5", "deliveryType":"ONESELF", "paymentType":"ONLINE", "subTotal":76, "shipFee":15, "orderDiscount":10, "status":"AWAIT_SHIPPED"},
+{"orderNo":547567601, "nickName":"用户6", "deliveryType":"HOME_DELIVERY", "paymentType":"ONLINE", "subTotal":92, "shipFee":5, "orderDiscount":0, "status":"AWAIT_PAY"},
+{"orderNo":547567601, "nickName":"用户7", "deliveryType":"HOME_DELIVERY", "paymentType":"ONLINE", "subTotal":546, "shipFee":0, "orderDiscount":0, "status":"AWAIT_REFUND"},
+{"orderNo":547567601, "nickName":"用户8", "deliveryType":"HOME_DELIVERY", "paymentType":"COD", "subTotal":65, "shipFee":5, "orderDiscount":10, "status":"done"},
+{"orderNo":547567601, "nickName":"用户9", "deliveryType":"ONESELF", "paymentType":"ONLINE", "subTotal":84, "shipFee":5, "orderDiscount":5, "status":"CANCELLED"},
+{"orderNo":547567601, "nickName":"用户10", "deliveryType":"HOME_DELIVERY", "paymentType":"ONLINE", "subTotal":123, "shipFee":0, "orderDiscount":0, "status":"AWAIT_SHIPPED"}]

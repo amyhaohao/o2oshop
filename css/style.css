@@ -1,0 +1,229 @@
+body{
+    font-family: "微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    color: #666;
+    background:#fff;
+    overflow-x:hidden; 
+}
+body a{color:#666;}
+body a:hover{cursor:pointer;}
+body a:hover,body a:active,body a:focus{text-decoration:none;outline: none;}
+.bodyContainer{padding:78px 0 30px 0;margin-left:180px;transition: all 0.5s;}
+
+.font-green{color:#4d7c0e!important;}
+.font-green2,.font-green2:hover{color:#4e8407!important;}
+.font-green3{color:#6CAF14!important}
+.font-dark{color:#333;}
+.font-red{color:#e44623!important;}
+.font-gray{color:#999999;}
+.font-gray2{color:#666;}
+.bg-red{background:#e60012;color:#fff!important;}
+.bg-red2{background:#e44623;color:#fff;}
+.bg-grey{background:#cccccc;color:#666;}
+.bg-grey2{background:#999999;color:#fff;}
+.bg-green{background:#6caf14;color:#fff!important;}
+.ellipsis{white-space:nowrap;overflow: hidden;text-overflow: ellipsis;}
+.ng-hide{display:none;}
+.con{width:1088px;margin:20px 35px;padding:20px 0;}
+.con2{margin:25px 30px 0;}
+.form-control{height:28px;border-radius:0;display:inline-block;box-shadow:1px 1px 2px 0 rgba(0,0,0,0.2) inset;padding:3px 10px;line-height:20px;font-size:15px;color:#333;border-width:1px;border-style:solid;border-color:#ccc #e7e7e7 #e7e7e7 #ccc;}
+select.form-control{padding:2px 0 3px 10px;}
+.button{border-radius:5px;cursor:pointer;display:inline-block;border:none;}
+.button2{border-radius:6px;cursor:pointer;display:inline-block;border:none;height:28px;line-height:28px;width:120px;font-weight:bold;text-align:center;font-size:15px;transition:all 0.3s;vertical-align: middle;}
+.button3{border:none;padding:4px 17px;display:inline-block;font-size:12px;transition:all 0.3s;}
+.button2:hover,.button3:hover{opacity:0.8}
+.left{float:left;}
+.right{float:right;}
+.rel{position: relative;}
+.center{text-align: center;}
+.fade{opacity:0;transition:all 0.5s;}
+.fadeIn{opacity:1;}
+.fadeOut{opacity:0;}
+.tableCon{margin:20px 0 14px;overflow-x: auto;}
+.table{min-width:700px;margin: 0;}
+.table2{position: absolute;top:0;left:0;box-shadow: 0 0 4px rgba(0,0,0,0.3);background: #fff;min-width: 0;}
+.bodyContainer .viewContainer .table th{height:32px;background:#f0f0f0;border:1px solid #f0f0f0;color:#666666;font-size:15px;font-weight:normal;text-align:center;}
+.bodyContainer .viewContainer .table td{color:#333; border:1px solid #d4d4d4;border-top:none;padding:10px 5px;text-align:center;font-size:15px;vertical-align:middle;height: 48px;}
+.tit2{font-size:18px;padding-bottom:4px;margin-bottom:10px;border-bottom:1px solid #cccccc;position: relative;}
+img{display:inline-block;}
+
+@keyframes fade{
+    from{opacity:0}
+    to{opacity: 1}
+} 
+@-webkit-keyframes fade{
+    from{opacity:0}
+    to{opacity: 1}
+}
+.animate-fade{-webkit-animation: fade 0.5s ease-out;animation: fade .5s ease-out;}
+
+.loginForm{position:fixed;left:0;top:0;width:100%;height:100%;background:url(../images/4.png) no-repeat 0 100% #e5fcc8;z-index:100;visibility: hidden;}
+.loginForm.fadeIn{visibility: visible;}
+.loginForm>div{width:474px;margin:0 auto;padding-top:170px;}
+.loginForm .font-green{font-size:36px;padding-left:220px;margin-bottom:55px;}
+.loginForm .line {margin-bottom:20px;}
+.loginForm .l{width:128px;line-height:58px;}
+.loginForm .l label{color:#333333;font-size:28px;font-weight:normal;}
+.loginForm .line input{width:340px;height:62px;border:1px solid #a1bc7d;border-radius:0;padding:0 30px;font-size:26px;line-height:62px;}
+.loginForm .button{width:340px;height:62px;font-size:26px;text-align:center;border:none;margin-left:128px;border-radius:0;}
+
+#left-menu{width:180px;height:100%;position:fixed;top:0;left:0;background:url(../images/1.png) no-repeat center 33px #6caf14;background-size:92px 80px;padding-top:148px;text-align:center;font-weight:bold;z-index:9;box-shadow: 1px 0 3px rgba(0,0,0,0.4);transition: all 0.5s;}
+#left-menu .a{display:block;border-top:#579610 1px solid;padding:10px 0;text-align:center;color:#427c03;transition: all 0.5s;}
+#left-menu .active{color:#fff;background:#508d0e;text-shadow: 1px 1px 1px rgba(0,0,0,0.3)}
+#left-menu .a2{font-size:12px;padding:7px 0 7px 61px;text-align:left;}
+.top-menu{height:73px;background:url(../images/5.png) no-repeat 0 0 #65a918;text-align:right;padding:30px 30px 0;color:#fff;position: fixed;right:0;left:180px;top:0;transition:all 0.5s;}
+.top-menu .logout{padding:3px 8px 4px;background:rgba(255,255,255,0.8);display:inline-block;border-radius:5px;font-size:12px;margin-left:20px;}
+.top-menu .glyphicon{visibility:hidden;transition:all 0.5s ease 0.5s;transform:scale(0);color:#fff;font-size: 26px;left:13px;top:50%;margin-top:-13px;position: absolute;text-shadow:1px 1px 1px rgba(0,0,0,0.2);}
+.top-menu span{text-shadow:1px 1px 1px rgba(0,0,0,0.3);}
+
+.page2 span{margin:0 5px;cursor:pointer;}
+.page2 .z{margin:0 0px 0 5px;cursor:default;}
+.page2 .font-red{cursor:default;}
+.page2 input{margin:0 4px;width:30px;border:1px solid #dbdbdb;height:20px;text-align:center;}
+
+.viewContainer .myUpload {position: relative;padding-right:91px}
+.viewContainer .myUpload .form-control{width:100%;padding:0;display:inline-block;margin:0;}
+.viewContainer .myUpload .button{font-size:15px;height:28px;width:85px;border-radius:0;position: absolute;right:0;top:0;margin:0!important;}
+.viewContainer .myUpload .disabled{background:#888;}
+.viewContainer .myUpload .drag{position: absolute;right:-190px;width:150px;top:0;height:150px;cursor: pointer;}
+.viewContainer .myUpload .drag img{width:100%;height:100%;}
+.viewContainer .myUpload .drag a{position: absolute;left:50%;width:50px;padding:5px 0;color:#fff;font-size: 10px;text-align: center;background: rgba(0,0,0,0.4);top:50%;border-radius: 3px;margin:-22px 0 0 -25px;line-height:12px;text-shadow: 1px 1px 1px rgba(0,0,0,0.5)}
+
+.ordersView .search{margin-right:-40px;}
+.ordersView .search .left{width:33%;margin-bottom:15px;position: relative;padding:0 40px 0 75px}
+.ordersView .search span{position: absolute;left:0;top:5px;}
+.ordersView .search input,
+.ordersView .search select{width:100%;}
+.ordersView .searchBtn input{margin-right:30px;}
+.ordersView .shipBtn{width:58px;height:26px;border:none;font-size:12px;transition: all 0.3s;}
+.ordersView .shipBtn:hover{opacity: 0.8;}
+
+.orderView {font-size:15px;}
+.orderView .c1 .left{width:50%;margin-bottom:3px;}
+.orderView .c1 .left .l{width:30%;max-width:120px;display:inline-block;}
+.viewContainer .orderView .table2 td{height:42px;}
+
+.orderStatisticView .search{margin:25px -5% 15px 0;}
+.orderStatisticView .search .left{margin-bottom:10px;position: relative;padding:0 5% 0 75px;width:40%;max-width: 340px;}
+.orderStatisticView .search .last{padding-left:0;width:20%;max-width:180px;}
+.orderStatisticView .search .left input,
+.orderStatisticView .search .left select{width:100%;}
+.orderStatisticView .search .left span{position: absolute;left:0;top:4px;}
+.orderStatisticView .tab{position: absolute;right:0;top:0;font-size: 14px;color:#fff;}
+.orderStatisticView .tab span{display:inline-block;background:#cccccc;height:28px;width:100px;text-align:center;line-height:26px;cursor:pointer;margin-left:2px;}
+.orderStatisticView .tab .active{background:#5ca8f2;color:#fff;cursor:default;}
+
+.productsView .tit2{text-align: right;}
+.productsView .tit2 a {padding:0 10px;font-size:15px;line-height:28px;display:inline-block;margin-left:20px;color:#333;}
+.productsView .tit2 .active{color:#4e8407;border-bottom:5px solid #6caf14;}
+.productsView .btns{position: absolute;left:0;top:-3px;}
+.productsView .table td{padding:8px 5px!important;}
+.productsView .table img{width:34px;height:34px;}
+.productsView .glyphicon-pencil{margin-right:5px;}
+.productsView table .glyphicon{font-size:16px;}
+.productsView table .glyphicon:hover{text-shadow:2px 2px 1px rgba(0,0,0,0.3);}
+
+.productView .tit2{font-size:18px;padding-bottom: 10px;position: relative;}
+.productView .tit2 span{cursor:pointer;}
+.productView .tit2 .active{color:#4e8407;}
+.productView .tit2 div{position: absolute;width:80px;left:0;bottom: 0;height: 3px;transition:all 0.5s;}
+.productView .tab1{padding:0 300px 70px 5px;margin-top:25px;position: relative;}
+.productView .tab1 .myUpload .drag{width:275px;height:275px;right:-300px;}
+.productView .tab1 .myUpload .drag a{width:90px;font-size:14px;margin:-40px 0 0 -45px;line-height:20px;padding:10px 0;}
+.productView .tab1 .logo{position: absolute;right:105px;top:280px;}
+.productView .tab1 .l{margin-bottom:13px;position: relative;padding-left:70px;}
+.productView .tab1 .l span{position: absolute;left:0;top:3px;}
+.productView .tab2{padding:0 5px}
+.productView .tab2 .params{margin-bottom: 5px;position: relative;padding-right:20px;}
+.productView .tab2 .form-control {margin-left:0;}
+.productView .tab2 .params .f1{width:30%;margin-right:1%;}
+.productView .tab2 .params .f2{width:69%;}
+.productView .tab2 .trash{width:30px;height:32px;cursor:pointer;background:url(../images/3.png) no-repeat 100% center;position: absolute;right:-5px;top:-2px;}
+.productView .tab2 .detail{position: relative;padding-right:300px}
+.productView .tab2 img{display:block;}
+.productView .tab2 .r{position: absolute;right:0;width:280px;top:0;}
+.productView .uploads{position: relative;margin-bottom: 28px;padding-left:165px;}
+.productView .uploads .font-gray2{position: absolute;left:0;top:160px;width:155px;text-align:center;font-size:12px;}
+.productView .uploads .myUpload .drag{width:155px;height:155px;right:auto;left:-165px;}
+.productView .uploads textarea{margin-top:10px;height:117px;}
+.productView .preview{position:relative;padding:10px;background:#f1f1f1;margin-bottom:10px;}
+.productView .preview img{width:260px;}
+.productView .preview .x{display:block;cursor:pointer;background:url(../images/8.png);position:absolute;right:-6px;top:-7px;width:18px;height:18px;}
+
+.mask{position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10;left:0;top:0;visibility: hidden;opacity: 0;transition:all 0.5s;}
+.maskShow{visibility: visible;opacity: 1;}
+.popup{position:fixed;z-index:10;width:940px;margin:-190px 0 0 -382px;top:50%;left:50%;background:#fff;padding:20px 30px;transition: all 0.5s;transform: translateY(-400px);-webkit-transform:translateY(-400px);}
+.maskShow .popup{transform: translateY(0);-webkit-transform:translateY(0);}
+.popShow{opacity:1;}
+.popup .x{cursor:pointer;display:block;width:18px;height:18px;background:url(../images/8.png);position:absolute;right:-6px;top:-6px;}
+
+.shopView .infos{position: relative;}
+.shopView .infos .left{width:41%;}
+.shopView .infos .right{width:17%;}
+.shopView .infos .line{margin:5px 0;}
+.shopView .infos .l{display:inline-block;width:35%;min-width: 100px;}
+.shopView img{border-radius: 10px;width:100%;max-width:150px;}
+
+.shopPop .cons{margin-right:180px;}
+.shopPop .cons .left,
+.shopPop .cons .right{width:48%;}
+.shopPop .line{margin:10px 0;position: relative;padding-left:70px;}
+.shopPop .line span{position: absolute;left:0;top:4px;}
+.shopPop .line input,
+.shopPop .line select{width:100%;display: block;}
+.shopPop .time .clearfix{position: relative;}
+.shopPop .time .left,
+.shopPop .time .right{width:47%}
+.shopPop .time .m{position: absolute;left:50%;margin-left:-3px;top:2px;}
+.shopPop .c{position: absolute;right:75px;top:215px;}
+.shopPop .myUpload .drag {right:-180px;}
+
+.datepicker{color:#333;}
+.datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active:active{background:#337ab7;}
+
+@media screen and (max-width:1080px){
+    .bodyContainer{margin-left:0;}
+    #left-menu{left:-185px;}
+    #left-menu.showMenu{left:0;}
+    .top-menu{left:0;box-shadow: 0 1px 2px rgba(0,0,0,0.3)}
+    .top-menu .glyphicon{visibility: visible;transform:scale(1);}
+    .shopPop{margin-left:-470px;}
+}
+@media screen and (max-width:950px){
+    .shopPop{margin-left:0;width:auto;left:10px;right:10px;}
+}
+
+@media screen and (max-width:768px){
+    .con2{margin:15px 20px 0;}
+    .bodyContainer{padding-top:46px;}
+    .top-menu{height: 44px;padding:10px 20px 0 0;background-size: auto 50px}
+    .shopView .infos .left{width:76%;float:none;}
+    .shopView .infos .right{float:none;position: absolute;right:0;top:0;width:22%;}
+    .shopView .btn1{display: none;}
+    .productsView .tit2{text-align: center;}
+    .productsView .tit2 a {margin:0;width:20%;}
+    .productsView .btns{position: static;}
+    .productView .tab1{margin-top:300px;padding-right:5px;}
+    .productView .tab1 .myUpload .drag{top:-288px;right:50%;margin-right: -101px;}
+    .productView .tab1 .logo{display: none;}
+    .productView .tab2 .detail{padding-right:0;}
+    .productView .tab2 .r{position: static;margin:20px auto;}
+    .ordersView .search .left{width:50%;}
+    .ordersView .searchBtn input{margin-right:20px;}
+    .page2 .omit{display: none;}
+    .loginForm>div{width:254px;padding-top:130px;}
+    .loginForm .font-green{font-size:26px;padding-left:80px;margin-bottom:30px;}
+    .loginForm .l{width:70px;line-height:28px;}
+    .loginForm .l label{font-size:16px;}
+    .loginForm .line input{width:170px;height:32px;padding:0 15px;font-size:14px;line-height:32px;}
+    .loginForm .button{width:170px;height:32px;font-size:14px;margin-left:70px;}
+}
+@media screen and (max-width:500px){
+    .ordersView .search{margin-right:0;}
+    .ordersView .search .left{width:100%;padding-right:0;}
+    .orderView .c1 .left{width:100%;}
+    .orderStatisticView .search{margin-right:0;}
+    .orderStatisticView .search .left{width:100%;padding-right: 0;max-width: 500px;}
+    .orderStatisticView .search .last{text-align: center;}
+    .orderStatisticView .search .last input{width:120px;}
+}

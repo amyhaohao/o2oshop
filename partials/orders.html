@@ -1,0 +1,82 @@
+<div class="ordersView font-dark">
+    <div class="con2">
+     <form action="json/test.xlsx" target="_blank" method="post">
+        <div class="search clearfix">
+            <div class="left"><span>订单编号</span><input type="text" class="form-control" ng-model="search.orderNo" name="orderNo"/></div>
+            <div class="left"><span style="letter-spacing:7px;">用户名</span><input type="text" class="form-control" ng-model="search.customerName" name="customerName"/></div>
+            <div class="left"><span>订单状态</span><select class="form-control" ng-model="search.status" name="orderStatus">
+                  <option value="">全部</option>
+                  <option value="AWAIT_PAY">待付款</option>
+                  <option value="AWAIT_SHIPPED">待发货</option>
+                  <option value="SHIPPED">已发货</option>
+                  <option value="CANCELLED">已取消</option>
+                  <option value="AWAIT_REFUND">待退款</option>
+                  <option value="done">已完成</option>
+                  </select></div>
+            <div class="left"><span>支付方式</span><select class="form-control" style="margin-right:0;" ng-model="search.paymentType" name="paymentType">
+                  <option value="">全部</option>
+                  <option value="ONLINE">在线支付</option>
+                  <option value="COD">货到付款</option>
+              </select></div>
+            <div class="left"><span>开始日期</span><input type="text" class="form-control" ng-model="search.beginTime" placeholder="格式 2015-5-12" name="beginTime"/></div>
+            <div class="left"><span>结束日期</span><input type="text" class="form-control" ng-model="search.endTime" placeholder="格式 2015-5-12" name="endTime"/></div>
+        </div>
+        <div class="searchBtn center" style="padding:10px 0 30px">
+            <input type="button" class="button2 bg-green" value="查 询" ng-click="doSearch()"/>
+            <input type="submit" class="button2 bg-red2" value="导 出" style="margin-right:0;"/>
+        </div>
+        </form>
+        <iframe name="exportFrame" style="display:none;"></iframe>
+        <div class="rel" style="overflow:hidden;">
+            <div class="tableCon" style="padding-left:100px;margin-top:0;">
+                <table class="table" style="min-width:800px;">
+            <thead>
+                <tr>
+                    <th>下单时间</th>
+                    <th>用户名</th>
+                    <th>商品金额</th>
+                    <th>运费</th>
+                    <th>优惠</th>
+                    <th>总金额</th>
+                    <th>支付方式</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="d in data" class="animate-fade">
+                    <td>{{(now-(startIndex+$index)*12000)|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{d.nickName}}</td>
+                    <td>&yen;{{d.subTotal.toFixed(2)}}</td>
+                    <td>&yen;{{d.shipFee.toFixed(2)}}</td>
+                    <td>-&yen;{{d.orderDiscount.toFixed(2)}}</td>
+                    <td>&yen;{{(d.subTotal+d.shipFee-d.orderDiscount).toFixed(2)}}</td>
+                    <td>{{(s.paymentType||d.paymentType).getOtherStatus()}}</td>
+                    <td>{{d.status.getOrderStatus()}}</td>
+                    <td>
+                        <input ng-if="d.status=='AWAIT_SHIPPED'" type="button" value="发 货" class="shipBtn bg-green" ng-click="ship($index)"/>
+                        <input ng-if="d.status=='AWAIT_REFUND'" type="button" value="退 款" class="shipBtn bg-red" ng-click="ship($index)"/>
+                    </td>
+                </tr>
+            </tbody>
+                </table>
+            </div>
+            <table class="table table2" style="width:101px;">
+                <thead>
+                    <tr>
+                        <th style="border-right:1px solid #d4d4d4;">订单编号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="d in data" class="animate-fade">
+                        <td><a href="#/orders/detail/{{100-startIndex-$index}}" class="font-green2">{{d.orderNo-startIndex-$index}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="clearfix" style="margin-top:-5px;">
+            <div class="left">{{totalCount}}条/10页</div>
+            <div class="right" ng-include src="'partials/pagination.html'"></div>
+        </div>
+    </div>
+</div>

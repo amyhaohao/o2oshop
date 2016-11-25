@@ -1,0 +1,3 @@
+{"id":1, "name":"店铺名称", "phone":"138123456789", "deliveryLimitAmount":"10", "payeeName":"姓名","payeeBank":"建设银行","status":"OPENING",
+ "imgUrl":"images/44.png","address":"上海浦建路","deliveryFee":"5", "openingStart":"09:00", "openingEnd":"22:00","payeeNo":"2342352355345435",
+ "notice":"满50减5，满40减4，满30减3"}

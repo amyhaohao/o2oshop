@@ -1,0 +1,45 @@
+<div class="productsView con2 font-dark rel">
+        <div class="tit2" style="padding-bottom:0;"><a href="#/products/list/0/1" ng-class="{active:categoryId==0}">全部</a><a ng-repeat="c in selectCats" href="#/products/list/{{c.id}}/1" ng-class="{active:categoryId==c.id}">{{c.name}}</a>
+        </div>
+        <div class="btns">
+            <a class="button2 bg-green" href="#/products/0">添加商品</a>
+            <input type="button" value="批量删除" class="button2 bg-red2" style="margin-left:10px" ng-click="delProducts()"/>
+        </div>
+        <div class="tableCon">
+            <table class="table">
+              <thead>
+                  <tr>
+                     <th><input type="checkbox" ng-model="checkAll" /></th>
+                     <th>序号</th>
+                     <th>图片</th>
+                     <th>商品名</th>
+                     <th>类别</th>
+                     <th>标签</th>
+                     <th>价格</th>
+                     <th>商品描述</th>
+                     <th>操作</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="d in products" class="animate-fade">
+                     <td><input type="checkbox" value="{{$index}}" ng-checked="checkAll" name="ids"/></td>
+                     <td>{{d.id}}</td>
+                     <td><img my-src="d.imgUrl"/></td>
+                     <td><div>{{d.name}}</div></td>
+                     <td>{{(selectCats|filter:{id:d.categoryId})[0].name}}</td>
+                     <td>{{(selectShopCats|filter:{id:d.shopCategoryId})[0].name}}</td>
+                     <td>&yen; {{d.price.toFixed(1)}}/{{d.unit}}</td>
+                     <td><div>{{d.desc}}</div></td>
+                     <td>
+                         <a class="glyphicon glyphicon-pencil font-green3" href="#/products/{{d.id}}" title="编辑"></a>
+                         <a class="glyphicon glyphicon-remove font-red" ng-click="delProduct($index)" title="删除"></a>
+                     </td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+            <div class="clearfix">
+                <div class="left">100条/10页</div>
+                <div class="right" ng-include src="'partials/pagination.html'"></div>
+            </div>
+</div>
