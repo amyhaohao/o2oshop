@@ -2,7 +2,7 @@
     <div class="tit2" style="margin-bottom:10px;">
         <span ng-class="{active:tab==1}" ng-click="tab=1" style="margin:0 40px 0 5px;">{{product.id==0?"新增":"编辑"}}商品</span>
         <span ng-class="{active:tab==2}" ng-click="tab=2">商品详情</span>
-        <div class="bg-green" style="left:{{tab==1?0:118}}px"></div>
+        <div class="bg-green" ng-style="{left:tab==1?0:'118px'}"></div>
     </div>
         <div class="tab1" ng-show="tab==1">
             <div class="l">

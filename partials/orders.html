@@ -47,7 +47,7 @@
             <tbody>
                 <tr ng-repeat="d in data" class="animate-fade">
                     <td>{{(now-(startIndex+$index)*12000)|date:'yyyy-MM-dd HH:mm:ss'}}</td>
-                    <td>{{d.nickName}}</td>
+                    <td>{{s.customerName||d.nickName}}</td>
                     <td>&yen;{{d.subTotal.toFixed(2)}}</td>
                     <td>&yen;{{d.shipFee.toFixed(2)}}</td>
                     <td>-&yen;{{d.orderDiscount.toFixed(2)}}</td>
